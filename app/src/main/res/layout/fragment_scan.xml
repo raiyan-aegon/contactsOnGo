@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="match_parent"
+        tools:context=".ScanFragment">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/scan"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/scan_contacts"
+                android:textColor="#fff"
+                android:textSize="23sp"
+                app:layout_constraintBottom_toTopOf="@+id/pulsator"
+                app:layout_constraintStart_toStartOf="@+id/progress"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <pl.bclogic.pulsator4droid.library.PulsatorLayout
+                android:id="@+id/pulsator"
+                android:layout_width="251dp"
+                android:layout_height="251dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:pulse_color="@color/colorAccent"
+                app:pulse_count="4"
+                app:pulse_duration="3000"
+                app:pulse_interpolator="AccelerateDecelerate"
+                app:pulse_repeat="0"
+                app:pulse_startFromScratch="true">
+
+
+            </pl.bclogic.pulsator4droid.library.PulsatorLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintBottom_toBottomOf="@+id/pulsator"
+                app:layout_constraintEnd_toEndOf="@+id/pulsator"
+                app:layout_constraintStart_toStartOf="@+id/pulsator"
+                app:layout_constraintTop_toTopOf="@+id/pulsator" />
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Raiyan"
+                android:textColor="#fff"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@id/progress"
+                app:layout_constraintStart_toStartOf="@id/progress"
+             />
+
+            <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:progress="1"
+                android:id="@+id/progress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pulsator" />
+
+
+            <com.bitvale.lavafab.LavaFab
+                android:id="@+id/lava_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:lavaBackgroundColor="@color/colorAccent"
+                app:lavaChild="left|top"
+                app:lavaDrawShadow="true"
+                app:lavaLeftIcon="@drawable/ic_sync"
+                app:lavaParentIcon="@drawable/ic_baseline_subject_24"
+                app:lavaParentSize="86dp"
+                app:lavaTopIcon="@drawable/ic_phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progress" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+            </layout>
